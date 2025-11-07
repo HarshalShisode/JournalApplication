@@ -14,8 +14,9 @@ import com.harshal.learning.entity.User;
 import com.harshal.learning.repository.UserRepository;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 @Slf4j
 public class UserService {
     @Autowired
