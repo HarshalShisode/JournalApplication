@@ -1,5 +1,6 @@
 package com.harshal.learning.controller;
 
+import com.harshal.learning.cache.CacheConfig;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,6 +25,9 @@ public class AdminController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private CacheConfig cacheConfig;
+
     @GetMapping("/all-users")
     public ResponseEntity<?> getAllUsers() {
         List<User> users=userService.getAllEntries();
@@ -37,6 +41,11 @@ public class AdminController {
     public ResponseEntity<?> createAdminUser(@RequestBody User user) {
         userService.saveAdminUser(user);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/clear-cache")
+    public void clearCache(){
+        cacheConfig.init();
     }
     
     
