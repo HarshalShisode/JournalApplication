@@ -8,7 +8,7 @@ JournalApplication is a web application built with Spring Boot, designed to help
 - Secure authentication and authorization (Spring Security)
 - Create, view, update, and delete journal entries
 - User-specific journals (each user's entries are kept private)
-- RESTful API endpoints for CRUD operations
+- REST ful API endpoints for CRUD operations
 - Data persistence using a database (e.g., MongoDB)
 - Error handling and validation
 
